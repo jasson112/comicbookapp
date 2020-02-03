@@ -6,19 +6,28 @@ function AsyncImage(props) {
   const [imageSrc, setImageSrc] = useState("");
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
+  let _isMounted = false;
 
   useEffect(() => {
     const img = new Image();
+    _isMounted = true;
     img.onload = () => {
-      setLoaded(true);
-      setImageSrc(props.src);
+      if (_isMounted) {
+        setLoaded(true);
+        setImageSrc(props.src);
+      }
     };
 
     img.onerror = () => {
-      setError(true);
+      if (_isMounted) {
+        setError(true);
+      }
     };
 
     img.src = props.src;
+    return () => {
+      _isMounted = false;
+    };
   }, []);
 
   if (error) {
