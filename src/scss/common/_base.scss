@@ -1,0 +1,65 @@
+html,
+body {
+  height: 100%;
+  font-size: 0;
+  margin: 0;
+  background-color: rgb(244, 244, 244);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+input,
+label {
+  font-size: $med-text;
+  margin: 0;
+}
+
+a {
+  font-size: $small-text;
+}
+
+.has-centered-text {
+  text-align: center;
+}
+
+.has-date {
+  font-size: $small-text;
+  color: gray;
+}
+
+header {
+  border-top: 1px solid #80808082;
+  border-bottom: 1px solid #80808082;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  justify-content: space-around;
+  display: flex;
+  flex-flow: row wrap;
+  .child {
+    flex-grow: 1;
+    &:last-child {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+    &.is-issue {
+      flex-direction: row;
+    }
+  }
+}
+
+.has-icons {
+  font-size: $small-text;
+  margin: 0px 10px 0px 10px;
+  cursor: pointer;
+  i {
+    margin-right: 10px;
+  }
+  &.is-selected {
+    color: #4caf50;
+  }
+}

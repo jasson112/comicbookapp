@@ -1,0 +1,78 @@
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (min-width: 37.5em) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (max-width: 64em) {
+      @content;
+    }
+  } @else if $point == mobileonly {
+    @media (max-width: 46.3em) {
+      @content;
+    }
+  }
+}
+
+@mixin loading-spinner(
+  $activeColor: #ef6565,
+  $selector: "&::before",
+  $time: 1.5s
+) {
+  @keyframes spinner {
+    0% {
+      transform: translate3d(-50%, -50%, 0) rotate(0deg);
+    }
+
+    100% {
+      transform: translate3d(-50%, -50%, 0) rotate(360deg);
+    }
+  }
+
+  animation-play-state: running;
+  opacity: 1;
+  position: relative;
+
+  &.-paused {
+    animation-play-state: paused;
+    opacity: 0.2;
+    transition: opacity linear 0.1s;
+  }
+
+  #{$selector} {
+    animation: $time linear infinite spinner;
+    animation-play-state: inherit;
+    border: solid 3px #dedede;
+    border-bottom-color: #{$activeColor};
+    border-radius: 50%;
+    content: "";
+    height: 40px;
+    left: 50%;
+    opacity: inherit;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    width: 40px;
+    will-change: transform;
+  }
+}
+
+@mixin opacityAnim {
+  @keyframes opac {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  opacity: 0;
+  animation-name: opac;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  animation-delay: 3s;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}

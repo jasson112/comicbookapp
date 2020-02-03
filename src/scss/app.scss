@@ -1,0 +1,13 @@
+.container {
+  padding: 0 5% 0 5%;
+}
+
+.loadingImg {
+  background-color: #c1c1c1;
+  height: 300px;
+  @include loading-spinner;
+}
+
+.loadedImg {
+  @include opacityAnim;
+}
