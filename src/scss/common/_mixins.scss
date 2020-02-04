@@ -15,7 +15,7 @@
 }
 
 @mixin loading-spinner(
-  $activeColor: #ef6565,
+  $activeColor: #4caf50,
   $selector: "&::before",
   $time: 1.5s
 ) {
