@@ -22,13 +22,24 @@
           img {
             vertical-align: middle;
             margin-right: 10px;
+            height: 80px;
+            width: 80px;
           }
         }
       }
     }
   }
   img {
-    max-width: 50%;
+    height: 800px;
   }
+}
+.loadingLittle {
+  height: 80px;
+  width: 80px;
+}
+
+.loadingUltraBig {
+  height: 800px;
+  width: 530px;
 }
 @import "./breakpoint";

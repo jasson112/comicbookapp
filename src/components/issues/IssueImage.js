@@ -24,7 +24,7 @@ function IssueImage(props) {
   if (imgSrc !== "") {
     return (
       <>
-        <AsyncImage src={imgSrc} alt={props.alt} />
+        <AsyncImage src={imgSrc} alt={props.alt} loading="loadingLittle" />
       </>
     );
   }

@@ -17,7 +17,7 @@ function Header(props) {
         <h1 className="has-centered-text">CommicBook</h1>
         <header>
           <div className="child is-issue">
-            <NavLink exact to="/">
+            <NavLink exact to="/" activeClassName="onLatest">
               Latest Issues
             </NavLink>
           </div>
@@ -30,7 +30,7 @@ function Header(props) {
         <h1 className="has-centered-text">CommicBook</h1>
         <header>
           <div className="child">
-            <NavLink exact to="/">
+            <NavLink exact to="/" activeClassName="onLatest">
               Latest Issues
             </NavLink>
           </div>

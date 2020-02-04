@@ -1,7 +1,6 @@
 import { handleResponse, handleError } from "./apiUtils";
 const baseUrl = process.env.REACT_APP_API_URL;
 const controller = new AbortController();
-const signal = controller.signal;
 
 export function getIssues() {
   return fetch(

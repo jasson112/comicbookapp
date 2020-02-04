@@ -33,9 +33,15 @@ function AsyncImage(props) {
   if (error) {
     return <img src={errorPlaceholder} alt={props.alt} />;
   } else if (!loaded) {
-    return <div className="loadingImg"></div>;
+    return <div className={"loadingImg " + props.loading}></div>;
   } else {
-    return <img src={imageSrc} alt={props.alt} className="loadedImg" />;
+    return (
+      <img
+        src={imageSrc}
+        alt={props.alt}
+        className={"loadedImg " + props.load}
+      />
+    );
   }
 }
 

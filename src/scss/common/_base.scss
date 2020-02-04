@@ -4,6 +4,7 @@ body {
   font-size: 0;
   margin: 0;
   background-color: rgb(244, 244, 244);
+  font-family: "Lato", sans-serif;
 }
 h1,
 h2,
@@ -16,7 +17,7 @@ span,
 input,
 label {
   font-size: $med-text;
-  margin: 0;
+  //margin: 0;
 }
 
 a {
@@ -48,6 +49,10 @@ header {
     }
     &.is-issue {
       flex-direction: row;
+      a {
+        text-decoration: underline;
+        color: black;
+      }
     }
   }
 }
@@ -62,4 +67,9 @@ header {
   &.is-selected {
     color: #4caf50;
   }
+}
+
+.onLatest {
+  text-decoration: none;
+  color: #4caf50;
 }

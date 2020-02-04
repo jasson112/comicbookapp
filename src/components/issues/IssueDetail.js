@@ -80,6 +80,7 @@ function IssueDetail(props) {
           <AsyncImage
             src={props.issue.image.medium_url}
             alt={props.issue.name}
+            loading="loadingUltraBig"
           />
         </div>
       </>
